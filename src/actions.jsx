@@ -12,7 +12,6 @@ export const createAction = async ({request}) => {
         title: formData.get("title"),
         details: formData.get("details"),
         dueDateTime: formData.get("dueDateTime"),
-        completed: formData.get("completed"),
     }
 
     
@@ -51,7 +50,6 @@ export const updateAction = async ({request, params}) => {
         title: formData.get("title"),
         details: formData.get("details"),
         dueDateTime: formData.get("dueDateTime"),
-        completed: formData.get("completed"),
     }
     
     await fetch(`${URL}${id}/`, {

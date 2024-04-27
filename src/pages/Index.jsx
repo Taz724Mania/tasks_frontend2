@@ -17,9 +17,6 @@ export default function Index(props) {
                 <label htmlFor="dueDateTime">
                     <input type="text" name="dueDateTime" id="dueDateTime" />
                 </label>
-                <label htmlFor="completed">
-                    <input type="checkbox" name="completed" id="completed" />
-                </label>
                 <button>Submit</button>
             </Form>
             <hr />
