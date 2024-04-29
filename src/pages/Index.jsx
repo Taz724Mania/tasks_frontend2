@@ -19,6 +19,10 @@ export default function Index(props) {
                 </label>
                 <button>Submit</button>
             </Form>
+
+            <form className="pure-form pure-form-stacked">
+
+            </form>
             <hr />
             {allTasks.map((task, i) => <Task task={task} key={i}/>)}
         </>
