@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledBurger = styled.button`
+const BurgerMenu = styled.button`
   position: absolute;
   top: 50%;
   left: 2rem;
@@ -41,4 +41,4 @@ const StyledBurger = styled.button`
   }
 `;
 
-export default StyledBurger;
+export default BurgerMenu;

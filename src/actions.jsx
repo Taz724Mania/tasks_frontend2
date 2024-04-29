@@ -14,6 +14,7 @@ export const createAction = async ({request}) => {
         dueDateTime: formData.get("dueDateTime"),
     }
 
+    console.log(newTask)
     
     await fetch(`${URL}`, {
         method: "POST",

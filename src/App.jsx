@@ -1,6 +1,6 @@
 import './App.css'
 import { Outlet } from 'react-router-dom'
-import StyledBurger from './components/Header'
+import BurgerMenu from './components/BurgerMenuStyle'
 
 function App() {
 
