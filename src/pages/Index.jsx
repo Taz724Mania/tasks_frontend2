@@ -5,7 +5,7 @@ export default function Index(props) {
     const allTasks = useLoaderData()
 
     return (
-        <div>
+        <div className="index">
             <h1>Add a Task</h1>
             {/* <Form action="/create" method="POST">
                 <label htmlFor="title">
