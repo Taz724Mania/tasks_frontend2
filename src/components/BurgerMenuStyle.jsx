@@ -1,44 +1,78 @@
 import styled from 'styled-components';
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
-const BurgerMenu = styled.button`
-  position: absolute;
-  top: 50%;
-  left: 2rem;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 2;
+const MenuLabel = styled.label`
+    background-color: whitesmoke;
+    position: fixed;
+    top: 6rem;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    cursor: pointer;
+    z-index: 1000;
+    text-align: center;
+`;
 
-  &:focus {
-    outline: none;
+const Icon = styled.span`
+  position: relative;
+  background-color: ${(props) => (props.clicked ? "transparent" : "black")};
+  width: 3rem;
+  height: 2px;
+  display: inline-block;
+  margin-top: 2.5rem;
+  transition: all 0.3s;
+  &::before,
+  &::after {
+    content: "";
+    background-color: black;
+    width: 3rem;
+    height: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
   }
-
-  div {
-    width: 100%;
-    height: 4px;
-    background-color: ${({ theme }) => theme.colors.primary};
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
+  &::before {
+    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
+    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
   }
-
-  &.open div:nth-child(2) {
-    opacity: 0;
-    transform: rotate(45deg);
+  &::after {
+    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
+    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
-  &.open div:nth-child(1) {
-    transform: translateY(20px);
+  ${MenuLabel}:hover &::before {
+    top: ${(props) => (props.clicked ? "0" : "-1rem")};
   }
-  &.open div:nth-child(3) {
-    transform: translateY(-20px);
-    rotate(-45deg);
+  ${MenuLabel}:hover &::after {
+    top: ${(props) => (props.clicked ? "0" : "1rem")};
   }
 `;
 
-export default BurgerMenu;
+const BurgMenu = () => {
+
+    const [click, setClick] = useState(false);
+    const handleClick = () => setClick(!click);
+
+    const menuItems = [
+        { label: "Home", path: "/" },
+        { label: "Add Task", path: "/about" },
+      ];
+  
+  return (
+    <>
+        <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
+                <Icon clicked={click}>&nbsp;</Icon>
+          </MenuLabel>
+          {/* <nav>
+          {menuItems.map((item) => (
+            <Link key={item.label} to={item.path}>
+              {item.label}
+            </Link>
+          ))}
+        </nav> */}
+        </>
+      );
+}
+
+export default BurgMenu
