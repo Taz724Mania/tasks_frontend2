@@ -2,7 +2,7 @@
 # App Desc: Users will be able to keep track of a list of items that need completing within a certain time period. The index page will present the list of items as well as a way to add tasks right at the top. The user will be able to edit and delete items from their list by clicking on an item. They will then be taken to a screen where they can freely edit or remove that particular item. There will be a hamburger menu at the top of the screen that can take them back to the home page.
 
 -------------------------------------------------------------
-# BACKEND
+# FRONTEND
 
 ## Dependencies
 - React
