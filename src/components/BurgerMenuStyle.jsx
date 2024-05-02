@@ -52,14 +52,27 @@ const Icon = styled.span`
 const BurgMenu = () => {
 
     const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
+    const [isOpen, setIsOpen] = useState(false);
+    const handleClick = () => setIsOpen(!isOpen);
 
+    const menuItems = [
+        { label: "Home", path: "/" },
+      ];
   
   return (
     <>
         <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
                 <Icon clicked={click}>&nbsp;</Icon>
           </MenuLabel>
+          {isOpen && ( 
+        <nav>
+          {menuItems.map((item) => (
+            <Link key={item.label} to={item.path}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      )}
         </>
       );
 }
