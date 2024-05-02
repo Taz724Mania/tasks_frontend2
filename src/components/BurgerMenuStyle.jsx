@@ -54,23 +54,12 @@ const BurgMenu = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
 
-    const menuItems = [
-        { label: "Home", path: "/" },
-        { label: "Add Task", path: "/about" },
-      ];
   
   return (
     <>
         <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
                 <Icon clicked={click}>&nbsp;</Icon>
           </MenuLabel>
-          {/* <nav>
-          {menuItems.map((item) => (
-            <Link key={item.label} to={item.path}>
-              {item.label}
-            </Link>
-          ))}
-        </nav> */}
         </>
       );
 }
